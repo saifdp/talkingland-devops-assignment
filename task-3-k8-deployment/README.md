@@ -131,7 +131,8 @@ Create a new dashboard.
 Add panels and use PromQL queries to visualize metrics (see examples in the original response). Examples:
 CPU Usage: rate(container_cpu_usage_seconds_total{pod=~"my-python-app.*"}[5m])
 Memory Usage: container_memory_working_set_bytes{pod=~"my-python-app.*"}
-6. Testing and Verification
+
+###6. Testing and Verification
 Get the Ingress controller's external IP address:
 
 ```bash
