@@ -2,15 +2,6 @@
 
 This project demonstrates Infrastructure as Code (IaC) using Terraform to deploy a basic web application stack in AWS.
 
-## Project Structure
-devops-assessment/
-├── main.tf             # Main infrastructure definition
-├── variables.tf        # Variable declarations
-├── outputs.tf          # Output definitions
-├── userdata.sh         # Nginx installation and configuration script
-└── environments/
-├── dev.tfvars      # Development environment variables
-└── prod.tfvars     # Production environment variables
 
 ## Prerequisites
 
