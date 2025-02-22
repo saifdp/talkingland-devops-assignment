@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-nodejs-app-deployment
+spec:
+  replicas: 2  # Start with 2 replicas
+  selector:
+    matchLabels:
+      app: my-nodejs-app
+  template:
+    metadata:
+      labels:
+        app: my-nodejs-app
+    spec:
+      containers:
+      - name: my-nodejs-container
+        image: <MY_ECR_IMAGE_URI>  # Placeholder - CodePipeline will replace this
+        ports:
+        - containerPort: 3000
+  strategy:
+    type: RollingUpdate  # Specify RollingUpdate strategy
+    rollingUpdate:
+      maxSurge: 25%        # Max extra pods during update (25% of desired)
+      maxUnavailable: 25%  # Max unavailable pods during update (25% of desired)
+  revisionHistoryLimit: 3   # Keep 3 previous ReplicaSets for rollback
